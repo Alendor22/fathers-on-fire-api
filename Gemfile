@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'dotenv-rails', groups: [:development, :test]
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
@@ -16,7 +17,10 @@ gem 'puma', '~> 4.1'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'devise_token_auth'
-gem "omniauth-google-oauth2", "~> 0.2.1"
+gem 'omniauth-google-oauth2', '~> 0.2.1'
+gem 'activeadmin'
+gem 'devise'
+gem 'inherited_resources'
 
 gem 'faker', '~> 2.14'
 # Use Active Storage variant
