@@ -1,4 +1,4 @@
-class Api::V1::DonationsController < ApplicationController
+class Api::V1::DonationsController < ApiController
   before_action :set_donation, only: [:show, :update, :destroy]
 
   # GET /donations
