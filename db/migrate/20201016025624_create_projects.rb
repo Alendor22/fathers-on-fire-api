@@ -5,7 +5,6 @@ class CreateProjects < ActiveRecord::Migration[6.0]
       t.text :summary
       t.string :objective
       t.string :location
-      t.belongs_to :admin, null: false, foreign_key: true
 
       t.timestamps
     end

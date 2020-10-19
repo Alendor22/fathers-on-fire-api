@@ -1,4 +1,5 @@
 class Donation < ApplicationRecord
-  belongs_to :donor
+  belongs_to :user
   belongs_to :project
+  has_many :comments
 end

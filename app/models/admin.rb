@@ -1,5 +1,5 @@
 class Admin < ApplicationRecord
+  belongs_to :user
   has_many :projects
   has_many :donations, through: :projects
-  has_many :donors, through: :donations
 end

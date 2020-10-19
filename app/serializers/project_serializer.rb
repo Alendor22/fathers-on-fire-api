@@ -1,4 +1,5 @@
 class ProjectSerializer < ActiveModel::Serializer
   attributes :id, :title, :summary, :objective, :location
-  has_many :donors, serializer: ProjectDonorsSerializer
+  has_many :users
+  # , serializer: ProjectUsersSerializer
 end

@@ -7,20 +7,21 @@ require 'faker'
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-solo = Admin.create(name:'Solomon Peña',email:'solomonraulpena@gmail.com',zip:11224)
+solo = Admin.create(name:'Solomon Peña',email:'solomonraulpena@gmail.com')
 
-adeja = Admin.create(name:'Adeja Lendor',email:'adejalendor@gmail.com',zip:10452)
+adeja = Admin.create(name:'Adeja Lendor',email:'alendor6@gmail.com')
 
 20.times do
-  Project.create(title:Faker::Company.name,summary:Faker::Lorem.paragraphs,objective:Faker::Lorem.paragraphs,location:"#{Faker::FunnyName.name} street, brooklyn, NY",admin_id:Admin.all.sample.id)   
+  Project.create(title:Faker::Company.name,summary:Faker::Lorem.paragraphs,objective:Faker::Lorem.paragraphs,location:"#{Faker::FunnyName.name} street, brooklyn, NY")   
 end
 
 100.times do
-  Donor.create(name:Faker::FunnyName.name,email:"#{Faker::FunnyName.name}@#{Faker::FunnyName.name}.com",zip:Faker::Number.within(range: 10000..90000))
+  User.create(name:Faker::FunnyName.name,email:"#{Faker::FunnyName.name}@#{Faker::FunnyName.name}.com")
 end
 
-225.times do
-  Donation.create(donor_id:Donor.all.sample.id,project_id:Project.all.sample.id,amount:Faker::Commerce.price(range: 1..1000000.0, as_string: true))
-end
+# 225.times do
+#   Donation.create(user_id:User.all.sample.id,project_id:Project.all.sample.id,amount:Faker::Commerce.price(range: 1..1000000.0, as_string: true))
+# end
 
 puts('seeded successfully!...')
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
